@@ -8,6 +8,11 @@ import { getBool, getFloat, getInteger } from "./helpers";
 
 export default function(req: NowRequest, res: NowResponse) {
   const { type = "Base" } = req.query;
+  if (Object.keys(req.query).length === 0) {
+    return res.send(
+      '<h1><a href="https://github.com/lkatartn/mm-test/blob/master/README.md">Check this link to get instructions</a></h1>'
+    );
+  }
   try {
     const [A, B, C] = [req.query.A, req.query.B, req.query.C].map(getBool);
     const D = getFloat(req.query.D);
