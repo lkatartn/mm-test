@@ -1,0 +1,11 @@
+{
+  "name": "mm-test",
+  "version": 2,
+  "routes": [{ "src": "/", "dest": "/index.ts" }],
+  "builds": [
+    {
+      "src": "/index.ts",
+      "use": "@now/node"
+    }
+  ]
+}
